@@ -49,3 +49,20 @@ Caso você não venha a passar para a próxima fase, queremos garantir que acima
 Se você tiver dicas ou sugestões de como melhorar esse teste, envie-nos uma issue que iremos avaliá-la.
 
 __Happy Coding :D__
+
+## Desafio com Django e Gjango REST Framework
+uso de Virtualenv, in Linux Debian 9.3
+
+verões:
+Python 3.7.1
+Django 2.2.3
+
+
+
+
+Comandos:
+Python -m venv venv 
+. venv/bin/activate
+
+pip install django
+
