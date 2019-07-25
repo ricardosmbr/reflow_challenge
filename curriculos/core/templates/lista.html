@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+
+
+    <div class="col-sm-9">
+   <h2>Meus Curriculos</h2>
+    <form class="" method="POST">
+        {% csrf_token %}
+        <input name="pescli" type="">
+      
+        <button method="POST" class="btn btn-primary"> 
+        Pesquizar</button>
+    </form>
+        <div class="well">       
+            <table class="table">
+                <thead class="thead-light">
+                  <th ></th>
+                  <th >Nome</th>
+                  <th >Descrição</th>
+                  <th ></th>
+                  <th ></th>
+                  <th ></th>
+                  <th ></th>
+                </thead>
+                 {% for con in curriculo %}
+                <thead>
+                  <th>
+                    <div class=""></div></th>
+                  <th >   
+                    <a href="">{{ con.name }}</a></th>
+                  <th >   
+                    <a href="">{{ con.description }}</a></th>
+                  <th>
+                
+                  <th ><a href="">
+                    <i class="fa fa-book"></i>
+                        Excluir
+                    </a></th>
+                  <th><a href="">
+                    <i class="fa fa-cog"></i>
+                        Editar
+                    </a>
+                </th>
+                <th>
+                </th>
+                </thead>
+                {% empty %} 
+                <thead>            
+                <th><p>Nenhum curriculo encontrado</p></th>
+                {% endfor %} 
+                </thead>
+            </table>              
+       </div>
+
+    </div>
+
+{% endblock %}

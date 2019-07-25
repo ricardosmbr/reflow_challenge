@@ -26,6 +26,7 @@ router.register(r'curriculo', CurriculoViewSet)
 
 urlpatterns = [
 	path('', views.home, name='home'),
+	path('lista', views.lista, name='lista'),
     path('admin/', admin.site.urls),
     path('api',include(router.urls)),
 ]

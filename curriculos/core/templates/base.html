@@ -9,15 +9,48 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>                                                  
-    <div class="mainhead">
-        <div class="alert alert-primary text-center">
+    <div class="p-3 mb-2 bg-info text-white">
+      <div class="row  alert alert-primary">
+        <div class="col-3 "></div>
+        <div class="col text-center">
           <h2>Controle de Curriculo</h2>
+   
+        </div>
+        <div class="col-3" >
+           {% if user.is_authenticated %}
+            Bem vindo, <br>{{ user }} 
+           {% else %}
+            <a href="admin">
+              <button type="logar" class="btn btn-outline-primary">Logar</button>
+            </a>
+           {% endif %}   
         </div>
 
+        
+      </div>
     </div>
-    <div class="mainbody">
+  <div class="row col-md-12">
+    <div class="col-sm-3 bg-light">
+      <ul ><li class="list-group-item"></li>
+      </ul><ul>
+        <li class="list-group-item"><a href="{% url 'lista' %}">
+          <button type="logar" class="btn btn-outline-primary">Listar Currculos</button>
+        </a></li>
+        </ul><ul >
+        <li class="list-group-item"><a href="">
+          <button type="logar" class="btn btn-outline-primary">Adicionar Curriculo </button>
+        </a></li>
+        </ul><ul>
+        <li class="list-group-item"><a href="">
+          <button type="logar" class="btn btn-outline-primary">Editar Curriculo</button>
+        </a></li>
+      </ul>
+    </div>
+        {% block content %}
 
-    </div>     
+        {% endblock %}
+    </div>   
+  </div>
     <div class="footer">
 
     </div>
