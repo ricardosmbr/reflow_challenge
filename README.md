@@ -65,4 +65,5 @@ Python -m venv venv
 . venv/bin/activate
 
 pip install django
+jango-admin.py startproject curriculos
 
