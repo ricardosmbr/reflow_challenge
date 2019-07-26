@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 class CurriculoAdmin(admin.ModelAdmin):
 
-    list_display = ('name','description','image','start_date','create_at')
+    list_display = ('name','description','image','create_at','update_at')
     search_fields = ['name']
 
 

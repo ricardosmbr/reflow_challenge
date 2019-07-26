@@ -7,13 +7,9 @@
            <h2>Dados do Curriculo</h2>  
         <div class="col-sm-3"></div>
     </div>
-    <form class="form-signin text-center" method="POST">
+    <form class="form-signin text-center" enctype="multipart/form-data" method="POST">
         {% csrf_token %}
-        {% if success %}
-            <div class="text-success">
-                <h5> Dados alterados com sucesso</h5>
-            </div>
-        {% endif %}
+
         <br>
         <fieldset  >
             <div class="erro_login">
@@ -28,23 +24,21 @@
                     {{ field }}
                 </div>
             </div>
-            <div class="erro_login">
+            <div class="text-danger">
                     {{ field.errors }}
             </div>
                 {% endfor %}
-            <div class="row">
-                <div class="col-sm-3 text-right">
-                    Arquivo
-                </div>
-                <div class="col-sm-5 text-left">
-                    <a href="{{arquivo}}">{{nome_arq}}</a>
-                </div>
-            </div>
                 <br />
             <div class="row">
-                <div class="col-sm-4"></div>
+                <div class="col-sm-3"></div>
+                 <a href="{% url 'lista' %}">
+                    <button type="button"  class="btn btn-lg btn-danger">
+                        Cancelar
+                    </button>
+                </a>
+                <div class="col-sm-1"></div>
                 <button  class="btn btn-lg btn-secondary">
-                    Fechar
+                    Cadastrar
                 </button>
             </div>
         </fieldset>

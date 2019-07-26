@@ -28,6 +28,7 @@ urlpatterns = [
 	path('', views.home, name='home'),
 	path('lista', views.lista, name='lista'),
     path('mostra/<int:pk>', views.mostra, name='mostra'),
+    path('novo', views.novo, name='novo'),
     path('admin/', admin.site.urls),
     path('api',include(router.urls)),
 ]

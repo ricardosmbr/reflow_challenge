@@ -5,9 +5,6 @@ class Curriculo(models.Model):
 
 	name = models.CharField('Nome',max_length=100)
 	description = models.TextField('Desrição',blank=True)
-	start_date = models.DateField(
-		'Data de Inicio', null=True, blank=True
-	)
 	image = models.FileField(
 		upload_to='images',
 		verbose_name='Curriculo',

@@ -1,29 +1,26 @@
 from django import forms
 from .models import Curriculo
+import datetime
 
 class MostraCurriculo(forms.ModelForm):
 
-	name = forms.CharField(
-		widget=forms.TextInput(attrs={
+	name = forms.CharField(widget=forms.TextInput(attrs={
 			'readonly':'True',
 			'size':'30'
-			})
-		)
-	description = forms.CharField(
-		widget=forms.TextInput(attrs={
+			}))
+	description = forms.CharField(widget=forms.TextInput(attrs={
 			'readonly':'True',
 			'size':'40'
-			})
-		) 
-
-	start_date = forms.CharField(
-		widget=forms.TextInput(attrs={
-			'readonly':'True',
-			'size':'10'
-			})
-		)
+			})) 
 
 	class Meta:
 		model = Curriculo
-		fields = ['name','description','start_date']
+		fields = ['name','description']
 	
+class NovoCurriculo(forms.ModelForm):
+
+
+
+	class Meta:
+		model = Curriculo
+		fields = ['name','description','image']
