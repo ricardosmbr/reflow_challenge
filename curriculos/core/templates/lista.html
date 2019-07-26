@@ -3,7 +3,7 @@
 {% block content %}
 
 
-    <div class="col-sm-9">
+  <div class="col-sm-9">
    <h2>Meus Curriculos</h2>
     <form class="" method="POST">
         {% csrf_token %}
@@ -28,9 +28,9 @@
                   <th>
                     <div class=""></div></th>
                   <th >   
-                    <a href="">{{ con.name }}</a></th>
-                  <th >   
-                    <a href="">{{ con.description }}</a></th>
+                    <a href="{% url 'mostra' con.pk %}">{{ con.name }}</a>
+                  </th>
+                  <th>{{ con.description }}</th>
                   <th>
                 
                   <th ><a href="">
@@ -52,7 +52,6 @@
                 </thead>
             </table>              
        </div>
-
     </div>
 
 {% endblock %}

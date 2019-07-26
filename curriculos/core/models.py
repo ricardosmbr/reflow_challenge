@@ -9,15 +9,18 @@ class Curriculo(models.Model):
 		'Data de Inicio', null=True, blank=True
 	)
 	image = models.FileField(
-		upload_to='images', verbose_name='Curriculo',
-		null=True, blank=True
+		upload_to='images',
+		verbose_name='Curriculo',
+		null=True,
+		blank=True
 	)
 	create_at = models.DateTimeField(
-		'Criando em',auto_now_add=True
+		'Criando em',auto_now_add=True, null=True, blank=True
 	)
 	update_at = models.DateTimeField(
-		'Atualizado em',auto_now=True
+		'Atualizado em',auto_now=True, null=True, blank=True
 	)
+
 
 	def __str__(self):
 		return self.name
