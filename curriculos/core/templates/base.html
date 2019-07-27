@@ -18,9 +18,14 @@
         </div>
         <div class="col-3" >
            {% if user.is_authenticated %}
+           <div class="row">
             Bem vindo, <br>{{ user }} 
+            <div class="col-3" >
+              <a href="{% url 'logout' %}">Sair</a>
+            </div>
+          </div>
            {% else %}
-            <a href="admin">
+            <a href="/accounts/login/?next=/lista">
               <button type="logar" class="btn btn-outline-primary">Logar</button>
             </a>
            {% endif %}   

@@ -124,3 +124,8 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'curriculos','media')
 
 MEDIA_URL = '/curriculos/'
+
+#LOGIN_URL = '/admin/'
+
+LOGIN_REDIRECT_URL = '/lista'
+LOGOUT_REDIRECT_URL = '/'
