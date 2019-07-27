@@ -50,8 +50,9 @@ Se você tiver dicas ou sugestões de como melhorar esse teste, envie-nos uma is
 
 __Happy Coding :D__
 
-## Desafio com Django e Gjango REST Framework
-uso de Virtualenv, in Linux Debian 9.3
+## Gestor de Curriculo 1.0
+
+Plataforma Linux Debian 9.3
 
 verões:
 Python 3.7.1
