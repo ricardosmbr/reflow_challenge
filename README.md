@@ -3,13 +3,13 @@
 Originalemnte feito na plataforma Linux Debian 9.3
 
 Pré-requisitos
-Python 3.7
++Python 3.7
 
 #criando ambiente para a aplicação
-python -m venv venv 
++python -m venv venv 
 
 #ativando o ambiente
-. venv/bin/activate
++. venv/bin/activate
 
 #instalando dependências
 pip install -r requirements.txt
