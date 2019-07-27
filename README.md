@@ -7,7 +7,8 @@ Pré-requisitos
 Python 3.7
 ```
 ## criando ambiente para a aplicação
-- python -m venv venv 
+- apt-get install python3-venv
+- python3 -m venv venv 
 
 ## ativando o ambiente
 - . venv/bin/activate
