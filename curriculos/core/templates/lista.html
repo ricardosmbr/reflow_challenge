@@ -34,11 +34,11 @@
                   <th>{{ con.description }}</th>
                   <th>
                 
-                  <th ><a href="">
+                  <th ><a onclick = "if (! confirm('Excluir Curriculo ?')) { return false; }" href="{% url 'apaga' con.pk %}">
                     <i class="fa fa-book"></i>
                         Excluir
                     </a></th>
-                  <th><a href="">
+                  <th><a href="{% url 'editar' con.pk %}">
                     <i class="fa fa-cog"></i>
                         Editar
                     </a>

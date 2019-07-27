@@ -22,13 +22,15 @@ from core.api.viewsets import CurriculoViewSet
 from core import views
 
 router = routers.DefaultRouter()
-router.register(r'curriculo', CurriculoViewSet)
+router.register(r'curriculo', CurriculoViewSet, base_name='Curriculo')
 
 urlpatterns = [
 	path('', views.home, name='home'),
 	path('lista', views.lista, name='lista'),
     path('mostra/<int:pk>', views.mostra, name='mostra'),
     path('novo', views.novo, name='novo'),
+    path('apaga/<int:pk>', views.apaga, name='apaga'),
+    path('editar/<int:pk>', views.editar, name='editar'),
     path('admin/', admin.site.urls),
     path('api',include(router.urls)),
 ]

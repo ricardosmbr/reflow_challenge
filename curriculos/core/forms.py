@@ -19,8 +19,12 @@ class MostraCurriculo(forms.ModelForm):
 	
 class NovoCurriculo(forms.ModelForm):
 
+	class Meta:
+		model = Curriculo
+		fields = ['name','description','image']
 
-
+class EditarCurriculo(forms.ModelForm):
+	
 	class Meta:
 		model = Curriculo
 		fields = ['name','description','image']

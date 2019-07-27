@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content  %}
+<div class="col-sm-8">
+    <div class="row">
+        <div class="col-sm-3"></div>
+           <h2>Dados do Curriculo</h2>  
+        <div class="col-sm-3"></div>
+    </div>
+    <form class="form-signin text-center" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {% if success %}
+            <div class="text-success">
+                <h5> Dados alterados com sucesso</h5>
+            </div>
+        {% endif %}
+        <br>
+        <fieldset  >
+            <div class="erro_login">
+                {{ form.non_field_errors }}
+            </div>
+                {% for field in form %}
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                    {{ field.label_tag }}
+                </div>
+                <div class="col-sm-5 text-left">
+                    {{ field }}
+                </div>
+            </div>
+            <div class="erro_login">
+                    {{ field.errors }}
+            </div>
+                {% endfor %}
+            <div class="row">
+                <div class="col-sm-3 text-right">
+                    Arquivo
+                </div>
+                <div class="col-sm-5 text-left">
+                    <a href="{{arquivo}}">{{nome_arq}}</a>
+                </div>
+            </div>
+                <br />
+            <div class="row">
+                <div class="col-sm-3"></div>
+                 <a href="{% url 'lista' %}">
+                    <button type="button"  class="btn btn-lg btn-danger">
+                        Cancelar
+                    </button>
+                </a>
+                <div class="col-sm-1"></div>
+                <button  class="btn btn-lg btn-secondary">
+                    Cadastrar
+                </button>
+            </div>
+
+        </fieldset>
+    </form>  
+</div>
+{% endblock %}

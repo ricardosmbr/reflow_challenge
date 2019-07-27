@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Curriculo
 from django.conf import settings
+from .arquivo import Apaga
 from django.contrib.auth.decorators import login_required
-from .forms import MostraCurriculo,NovoCurriculo
+from .forms import MostraCurriculo,NovoCurriculo,EditarCurriculo
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 
@@ -45,11 +46,33 @@ def novo(request):
 		form = NovoCurriculo(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			messages.success(request,"Curriculo cadastrado com sucesso")
+			messages.success(request,"Curriculo cadastrado com sucesso",extra_tags='text-success')
 			return redirect('lista')
 	else:
 		form = NovoCurriculo()	
 	context['form'] = form
 	return render(request, template_name, context)
 
-	
+@login_required
+def apaga(request,pk):
+	curriculo = Curriculo.objects.get(pk=pk)
+	curriculo.delete()
+	Apaga(curriculo)
+	messages.success(request,"Curriculo apagado com sucesso",extra_tags='text-success')
+	return redirect('lista')
+
+@login_required
+def editar(request,pk):
+	template_name = 'editar.html'
+	curriculo = Curriculo.objects.get(pk=pk)
+	if request.method == 'POST':
+		form = EditarCurriculo(request.POST or None, request.FILES, instance=curriculo)
+		form.save()
+		messages.success(request,"Curriculo editado com sucesso",extra_tags='text-success')
+		return redirect('lista')
+	else:
+		form = EditarCurriculo(instance=curriculo)	
+	context = {
+		'form':form
+	}
+	return render(request, template_name, context)
